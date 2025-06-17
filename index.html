@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reading Area Modes</title>
+    <style>
+      body {
+        margin: 0;
+        height: 200vh;
+        font-family: sans-serif;
+      }
+
+      .reading-area {
+        position: fixed;
+        background-color: rgba(255, 255, 0, 0.3);
+        pointer-events: none;
+        border: 2px dashed #f90;
+        z-index: 1000;
+        transition: top 0.05s, left 0.05s;
+      }
+
+      .vertical {
+        width: 100%;
+        height: 200px;
+      }
+
+      .horizontal {
+        width: 200px;
+        height: 100%;
+      }
+
+      .square {
+        width: 200px;
+        height: 200px;
+      }
+
+      .controls {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        background: white;
+        padding: 10px;
+        border-radius: 6px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        z-index: 1100;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="controls">
+      <label
+        ><input
+          type="radio"
+          name="mode"
+          value="vertical"
+          checked
+        />
+        Vertical Mode</label
+      ><br />
+      <label
+        ><input
+          type="radio"
+          name="mode"
+          value="horizontal"
+        />
+        Horizontal Mode</label
+      ><br />
+      <label
+        ><input
+          type="radio"
+          name="mode"
+          value="square"
+        />
+        Square Mode</label
+      >
+    </div>
+
+    <div
+      class="reading-area vertical"
+      id="readingArea"
+    ></div>
+  </body>
+  <script src="logic.js"></script>
+</html>
